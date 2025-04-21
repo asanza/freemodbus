@@ -50,4 +50,10 @@ struct mb_handler {
     mb_handler_fn fn;
 };
 
+struct mb {
+    uint8_t             id;
+    struct mb_handler  *handlers;
+    uint8_t             handlers_len;
+};
+
 #endif /* MODBUS_H_E97861DA_3ECA_4C65_BFFC_69EDAFF05CA5 */

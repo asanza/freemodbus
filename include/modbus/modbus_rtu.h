@@ -9,11 +9,15 @@
 #define MODBUS_RTU_H_FF363922_5961_4B3B_B7A7_4FA56794B9CD
 
 #include <stdint.h>
+#include <modbus/modbus.h>
+
+#define MBRTU_MAX_PDU_SIZE 256
+
+struct mbrtu_state {
+    uint8_t buf[MBRTU_MAX_PDU_SIZE];
+};
 
 int
-mbrtu_on_data_arrived(uint8_t* buf, uint16_t len);
-
-int
-mbrtu_poll( void );
+mbrtu_poll(const struct mb, const struct mbrtu_state* state);
 
 #endif /* MODBUS_RTU_H_FF363922_5961_4B3B_B7A7_4FA56794B9CD */
